@@ -1,16 +1,14 @@
 package controller;
 
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.PageRequest;
-import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -21,15 +19,15 @@ import org.springframework.web.servlet.ModelAndView;
 import attraction.model.Achat;
 import attraction.model.Attraction;
 import attraction.model.Boutique;
-import attraction.model.Commodite;
-import attraction.model.Element;
-import attraction.model.Employe;
 import attraction.model.Parc;
 import attraction.model.Restaurant;
-import attraction.repositories.*;
-
-import org.springframework.ui.Model;
-import org.springframework.validation.BindingResult;
+import attraction.repositories.AchatRepository;
+import attraction.repositories.AttractionRepository;
+import attraction.repositories.BoutiqueRepository;
+import attraction.repositories.CommoditeRepository;
+import attraction.repositories.EmployeRepository;
+import attraction.repositories.ParcRepository;
+import attraction.repositories.RestaurantRepository;
 
 
 @Controller

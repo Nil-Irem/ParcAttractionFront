@@ -71,11 +71,11 @@ public class PossessionController {
 			}	
 		}
 		
-		mAv.addObject("hidden_attraction","true");
-		mAv.addObject("hidden_restaurant","true");
-		mAv.addObject("hidden_commodite","true");
-		mAv.addObject("hidden_boutique","true");
-		mAv.addObject("hidden_employe","true");
+		mAv.addObject("display_attraction","block");
+		mAv.addObject("display_restaurant","block");
+		mAv.addObject("display_commodite","block");
+		mAv.addObject("display_boutique","block");
+		mAv.addObject("display_employe","block");
 		
 		mAv.addObject("attractions",attractions);
 		mAv.addObject("restaurants",restaurants);

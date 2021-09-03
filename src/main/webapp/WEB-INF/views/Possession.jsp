@@ -1,29 +1,40 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
 
+<style>
+
+.centerText{
+	text-align: center;
+}
+</style>
+
+
+
 <!DOCTYPE html>
 <html>
-	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
-	<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js" integrity="sha384-eMNCOe7tC1doHpGoWe/6oMVemdAVTMs2xqW4mwXrXsW0L84Iytr2wi5v2QjrP/xp" crossorigin="anonymous"></script>
-	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.min.js" integrity="sha384-cn7l7gDp0eyniUwwAZgrzD06kc/tftFf19TOAs2zVinnD/C7E91j9yyk5//jjpt/" crossorigin="anonymous"></script>
-	<c:set var="ctx" value = "${pageContext.servletContext.contextPath}"/>
 <head>
-	<meta charset="UTF-8">
-	<title>Yloocoaster Tycoon Possession </title>
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+	<script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+	<meta charset="utf-8">
+	<title>Yolocoaster Tycoon Possession </title>
 </head>
 
 <body>
 	
+	<c:set var="ctx" value = "${pageContext.servletContext.contextPath}"/>
+	<h3>Hello</h3>
 
-<div id="listAttraction" hidden="${hidden_attraction}">
+<div id="listAttraction" >
 	&emsp; &emsp; 
-	<a href="${ctx}/achats/attraction" type="button" class="btn btn-sucess">Acheter une nouvelle attraction</a>
-	&emsp;
+	<a href="${ctx}/achats/attraction" type="button" class="btn btn-success">Acheter une nouvelle attraction</a>
+	&emsp; 
 	<input id="filterAttraction" placeholder="filtre attraction">	
      <table class="table table-striped">
        <thead>
-		 <tr> <th colspan=6>Liste des attractions du parc ${parc.nomParc}</th></tr>
+		 <tr> <th colspan=6 class="centerText">Liste des attractions du parc ${parc.nomParc}</th></tr>
          <tr>
            <th>Nom</th>
            <th>Taille</th>
@@ -51,14 +62,14 @@
 </div>
 
 
-<div id="listBoutique" hidden="${hidden_boutique}">
+<div id="listBoutique" style="display: ${display_boutique}">
 	&emsp; &emsp; 
-	<a href="${ctx}/achats/boutique" type="button" class="btn btn-sucess">Acheter une nouvelle boutique</a>
+	<a href="${ctx}/achats/boutique" type="button" class="btn btn-success">Acheter une nouvelle boutique</a>
 	&emsp;
 	<input id="filterBoutique" placeholder="filtre boutique">	
      <table class="table table-striped">
        <thead>
-		 <tr> <th colspan=7>Liste des boutiques du parc ${parc.nomParc}</th></tr>
+		 <tr> <th colspan=7 class="centerText">Liste des boutiques du parc ${parc.nomParc}</th></tr>
          <tr>
            <th>Nom</th>
            <th>Taille</th>
@@ -88,14 +99,14 @@
 </div>
 
 
-<div id="listRestaurant" hidden="${hidden_restaurant}">
+<div id="listRestaurant" style="display: ${display_restaurant}">
 	&emsp; &emsp; 
-	<a href="${ctx}/achats/restaurant" type="button" class="btn btn-sucess">Acheter un nouveau restaurant</a>
+	<a href="${ctx}/achats/restaurant" type="button" class="btn btn-success">Acheter un nouveau restaurant</a>
 	&emsp;
 	<input id="filterRestaurant" placeholder="filtre restaurant">	
      <table class="table table-striped">
        <thead>
-		 <tr> <th colspan=7>Liste des restaurants du parc ${parc.nomParc}</th></tr>
+		 <tr> <th colspan=7 class="centerText">Liste des restaurants du parc ${parc.nomParc}</th></tr>
          <tr>
            <th>Nom</th>
            <th>Taille</th>
@@ -125,14 +136,14 @@
 </div>
 
 
-<div id="listCommodite" hidden="${hidden_commodite}">
+<div id="listCommodite" style="display: ${display_commodite}">
 	&emsp; &emsp; 
-	<a href="${ctx}/achats/commodite" type="button" class="btn btn-sucess">Acheter une nouvelle commodite</a>
+	<a href="${ctx}/achats/commodite" type="button" class="btn btn-success">Acheter une nouvelle commodite</a>
 	&emsp;
 	<input id="filterCommodite" placeholder="filtre commodite">	
      <table class="table table-striped">
        <thead>
-		 <tr> <th colspan=4>Liste des commodités du parc ${parc.nomParc}</th></tr>
+		 <tr> <th colspan=4 class="centerText">Liste des commodités du parc ${parc.nomParc}</th></tr>
          <tr>
            <th>Quantité</th>
            <th>Nom</th>
@@ -155,14 +166,14 @@
 </div>
 
 
-<div id="listEmploye" hidden="${hidden_employe}">
+<div id="listEmploye" style="display: ${display_employe}">
 	&emsp; &emsp; 
-	<a href="${ctx}/achats/employe" type="button" class="btn btn-sucess">Embaucher un nouvel employé</a>
+	<a href="${ctx}/achats/employe" type="button" class="btn btn-success">Embaucher un nouvel employé</a>
 	&emsp;
 	<input id="filteremploye" placeholder="filtre employe">	
      <table class="table table-striped">
        <thead>
-		 <tr> <th colspan=4>Liste des employés du parc ${parc.nomParc}</th></tr>
+		 <tr> <th colspan=4 class="centerText">Liste des employés du parc ${parc.nomParc}</th></tr>
          <tr>
            <th>Nombre</th>
            <th>Métier</th>

@@ -19,18 +19,18 @@
 
 <h1>Liste des parties</h1>
 &emsp; &emsp; 
-<input id="btnAddParc" type="button" class="btn btn-sucess" value="Créer une nouvelle partie">
+<input id="btnAddParc" type="button" class="btn btn-success" value="Créer une nouvelle partie">
 &emsp;
 <input id="filterPartie" placeholder="filtre">
         
-<div id="addFormParc" hidden="true">
+<div id="addFormParc" style="display: none">
 	<h3>Nouvelle partie</h3>
 	<form:form action="${ctx}/parcs/addparc" method="post" modelAttribute="parc" class="formulaire">
-		<form:input required="true" path="joueur" type="hidden" value="${joueur}"/><br>
+		<form:input required="true" path="joueur.id" type="hidden" value="${sessionScope.joueur.id}"/><br>
 		Nom* <form:input required="true" path="nomParc" placeholder="nom" type="text"/><br>
-			<form:errors path="libelle" style="color:red"/><br><br>
+			<form:errors path="nomParc" style="color:red"/><br><br>
 		Difficulte* <form:select required="true" path="typeDifficulte" items="${typesDifficultes}"/><br><br>
-		<button type="submit" class="btn btn-sucess">Ajouter</button><br><br>
+		<button type="submit" class="btn btn-success">Ajouter</button><br><br>
 	</form:form>
 </div> 
 	
@@ -67,7 +67,7 @@
 
 	btnAddParc.onclick=function()
 	{
-		addFormParc.hidden="false";
+		addFormParc.style.display="block";
 	}
 
 </script>
